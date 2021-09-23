@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Law NLP Project
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h2> Enter text: </h2>
+  </div>
+  <div>
+    <form method = "POST" action="/action_page.php">
+      <textarea rows="20" cols="100" name="rawtext">
+
+      </textarea>
+      <div>
+        <button type="submit" value="Analyse">Submit</button>
+        <button type="reset">Clear</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

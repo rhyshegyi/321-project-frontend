@@ -1,0 +1,7 @@
+{
+  "name": "Law NLP Project",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
