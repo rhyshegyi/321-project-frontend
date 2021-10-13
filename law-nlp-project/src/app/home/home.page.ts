@@ -1,6 +1,6 @@
 import { ApiService } from './../services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { NavController, IonNav } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +13,21 @@ export class HomePage {
   constructor(private api: ApiService) {}
 
   async onSubmit(){
-      
       const result = await this.api.sendText(this.text).toPromise();
       document.getElementById("results").innerHTML = result;
+      this.getContent().scrollToPoint(0, 600);
+  }
+
+  onClear(){
+    document.getElementById("results").innerHTML = null;
+  }
+
+  goToTop(){
+    this.getContent().scrollToTop(500);
+  }
+
+  getContent() {
+    return document.querySelector('ion-content');
   }
 
   doRefresh(event) {

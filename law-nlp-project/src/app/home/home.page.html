@@ -22,34 +22,35 @@
     <ion-label position="floating">Enter Text</ion-label>
       <ion-textarea  placeholder="Enter text here..." rows="20"  name="input" id = "input" [(ngModel)] = "text"></ion-textarea>
   </ion-item>
-      <ion-item>
-      <ion-label>Select desired area of law</ion-label>
-      <ion-select>
-        <ion-select-option value="cat">Cat</ion-select-option>
-        <ion-select-option value="dog">Dog</ion-select-option>
-      </ion-select>
-    </ion-item>
+
 
     <ion-button (click)="onSubmit()" expand="full" >
       Submit
     </ion-button>
 
-    <ion-button type = "reset" expand="full" color="danger">
+    <ion-button type = "reset" expand="full" color="danger" (click)="onClear()">
       Clear
     </ion-button>
-    
+
+
+
+
     <ion-item-divider>
       <h2> Results: </h2>
     </ion-item-divider>
     <ion-card>    
       <ion-card-content id = "results" >
-
+        results will appear here
       </ion-card-content>
     </ion-card>
+
+    <ion-button (click)="goToTop()" expand="full" color="success" >
+      Go back to top
+    </ion-button>
     
   </form>
-</ion-content>
 
+</ion-content>
 </ion-app>
 
 <script>
