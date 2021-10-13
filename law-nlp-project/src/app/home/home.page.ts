@@ -1,6 +1,6 @@
 import { ApiService } from './../services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, IonNav } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -16,9 +16,6 @@ export class HomePage {
       
       const result = await this.api.sendText(this.text).toPromise();
       document.getElementById("results").innerHTML = result;
-      console.log(result);
-      
-
   }
 
   doRefresh(event) {

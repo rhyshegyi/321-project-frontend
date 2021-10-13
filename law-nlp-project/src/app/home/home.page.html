@@ -8,14 +8,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" [scrollEvents]="true">
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-
-   <!-- <ion-nav root="nav-home"></ion-nav> -->
-
 
   <ion-item-divider>
     <h1> Enter text: </h1>
@@ -26,30 +23,29 @@
       <ion-textarea  placeholder="Enter text here..." rows="20"  name="input" id = "input" [(ngModel)] = "text"></ion-textarea>
   </ion-item>
       <ion-item>
-      <ion-label>Law Type</ion-label>
-      <ion-select value="dog">
+      <ion-label>Select desired area of law</ion-label>
+      <ion-select>
         <ion-select-option value="cat">Cat</ion-select-option>
         <ion-select-option value="dog">Dog</ion-select-option>
       </ion-select>
     </ion-item>
 
-    <ion-button (click)="onSubmit()" expand="full"  class="ion-activatable ripple-parent">
+    <ion-button (click)="onSubmit()" expand="full" >
       Submit
-      <ion-ripple-effect></ion-ripple-effect>
     </ion-button>
 
-    <ion-button type = "reset" expand="full" color="danger" class="ion-activatable ripple-parent">
+    <ion-button type = "reset" expand="full" color="danger">
       Clear
-      <ion-ripple-effect type="unbounded"></ion-ripple-effect>
     </ion-button>
     
     <ion-item-divider>
       <h2> Results: </h2>
     </ion-item-divider>
-    <ion-item>
-     
-      <ion-text id = "results" >  </ion-text>
-    </ion-item>
+    <ion-card>    
+      <ion-card-content id = "results" >
+
+      </ion-card-content>
+    </ion-card>
     
   </form>
 </ion-content>
