@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Law NLP Project
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <div>
+      <h2> Enter text: </h2>
+    </div>
+    <div>
+        <textarea rows="20" cols="100" name="input" id = "input" [(ngModel)] = "text">
+  
+        </textarea>
+        <div>
+          <ion-button class = "button" (click)="onSubmit()" >Submit</ion-button>
+          <ion-button class = "button" type = "reset">Reset</ion-button>
+        </div>
+    </div>
+  </ion-content>
+  

@@ -1,22 +1,62 @@
+<html>
+
+<ion-app>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Law NLP Project
-    </ion-title>
+    <ion-title>Law NLP Project</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div>
-    <h2> Enter text: </h2>
-  </div>
-  <div>
-      <textarea rows="20" cols="100" name="input" id = "input" [(ngModel)] = "text">
 
-      </textarea>
-      <div>
-        <ion-button class = "button" (click)="onSubmit()" >Submit</ion-button>
-        <ion-button class = "button" type = "reset">Reset</ion-button>
-      </div>
-  </div>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+   <!-- <ion-nav root="nav-home"></ion-nav> -->
+
+
+  <ion-item-divider>
+    <h1> Enter text: </h1>
+  </ion-item-divider>
+  <form>
+  <ion-item>
+    <ion-label position="floating">Enter Text</ion-label>
+      <ion-textarea  placeholder="Enter text here..." rows="20"  name="input" id = "input" [(ngModel)] = "text"></ion-textarea>
+  </ion-item>
+      <ion-item>
+      <ion-label>Law Type</ion-label>
+      <ion-select value="dog">
+        <ion-select-option value="cat">Cat</ion-select-option>
+        <ion-select-option value="dog">Dog</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button (click)="onSubmit()" expand="full"  class="ion-activatable ripple-parent">
+      Submit
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-button>
+
+    <ion-button type = "reset" expand="full" color="danger" class="ion-activatable ripple-parent">
+      Clear
+      <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+    </ion-button>
+    
+    <ion-item-divider>
+      <h2> Results: </h2>
+    </ion-item-divider>
+    <ion-item>
+     
+      <ion-text id = "results" >  </ion-text>
+    </ion-item>
+    
+  </form>
 </ion-content>
+
+</ion-app>
+
+<script>
+ 
+</script>
+</html>

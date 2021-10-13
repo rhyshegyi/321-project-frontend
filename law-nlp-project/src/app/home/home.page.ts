@@ -15,8 +15,19 @@ export class HomePage {
   async onSubmit(){
       
       const result = await this.api.sendText(this.text).toPromise();
+      document.getElementById("results").innerHTML = result;
       console.log(result);
+      
 
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
   }
 
 }

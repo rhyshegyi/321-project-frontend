@@ -10,10 +10,9 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   sendText(text: string){
-    const formData: any = new FormData();
-    formData.append("input", text);
-    
-    return this.http.post(environment.apiBaseUrl + "/blackstonetest", formData)
+
+    const data = {input: text};
+    return this.http.post(environment.apiBaseUrl + "/blackstonetest", data, { responseType: 'text' })
     
   }
 }
