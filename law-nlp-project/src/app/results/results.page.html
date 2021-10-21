@@ -1,25 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Results</ion-title>
+    <ion-title>Law NLP Project</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<div>
-  <h1>Displaying Entities</h1>
-</div>
+  <ion-item-divider>
+    <h2> Results: </h2>
+  </ion-item-divider>
+  
+  <ion-item>
+    <p id = "results" [innerHTML] = "result" >
+      results will appear here
+    </p>
+  </ion-item>
 
-<div>
-  <h2>Original Text</h2>
-    <!-- {{ text }} --> 
+  <ion-button (click)="goToTop()" expand="full" color="success" >
+    Go back to top
+  </ion-button>
 
-</div>
-
-<div>
-  <h2>Result Text</h2>
-    <!-- {{ result|markdown }} -->
-
-</div>
-
-<ion-button class = "button"  routerLink="/" >Reset</ion-button>
+<ion-button expand = "full" class = "button"  routerLink="" >Home</ion-button>
 </ion-content>

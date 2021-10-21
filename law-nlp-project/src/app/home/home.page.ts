@@ -1,6 +1,7 @@
 import { ApiService } from './../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,33 +11,13 @@ import { NavController } from '@ionic/angular';
 export class HomePage {
 
   text: string;
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private router: Router) {}
 
-  async onSubmit(){
-      const result = await this.api.sendText(this.text).toPromise();
-      document.getElementById("results").innerHTML = result;
-      this.getContent().scrollToPoint(0, 600);
+  onSubmit(){
+    //route text to results page
+      this.router.navigate(["results", this.text]);
+      
   }
 
-  onClear(){
-    document.getElementById("results").innerHTML = null;
-  }
-
-  goToTop(){
-    this.getContent().scrollToTop(500);
-  }
-
-  getContent() {
-    return document.querySelector('ion-content');
-  }
-
-  doRefresh(event) {
-    console.log('Begin async operation');
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
-    }, 2000);
-  }
 
 }
