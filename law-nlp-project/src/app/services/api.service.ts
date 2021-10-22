@@ -11,7 +11,10 @@ export class ApiService {
 
   sendText(text: string){
 
+    //get data
     const data = {input: text};
+
+    //send data to server
     return this.http.post(environment.apiBaseUrl + "/blackstonetest", data, { responseType: 'text' })
     
   }

@@ -34,7 +34,7 @@ export class ResultsPage implements OnInit {
     
   }
 
-  //get content fot button functions
+  //get content for button functions
   getContent() {
     return document.querySelector('ion-content');
   }

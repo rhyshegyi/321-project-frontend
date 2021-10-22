@@ -1,7 +1,10 @@
+<!-- HTML home page by Rhys Hegyi -->
+
 <html>
 
 <ion-app>
 
+  <!-- Toolbar -->
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Law NLP Project</ion-title>
@@ -10,25 +13,27 @@
 
 <ion-content [fullscreen]="true" [scrollEvents]="true">
 
-
+<!-- Text Area -->
   <ion-item-divider>
     <h1> Enter text: </h1>
   </ion-item-divider>
   <form>
-  <ion-item>
+    <ion-item>
       <ion-textarea  placeholder="Enter text here..." rows="20"  name="input" id = "input" [(ngModel)] = "text"></ion-textarea>
-  </ion-item>
+    </ion-item>
+  <!-- Model selection -->
   <ion-item>
-  <ion-label>Model</ion-label>
-  <ion-select placeholder="Select One">
-    <ion-select-option value="1">1</ion-select-option>
-    <ion-select-option value="2">2</ion-select-option>
-  </ion-select>
+    <ion-label>Model (WIP)</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+      </ion-select>
   </ion-item>
 
+  <!-- Entity Selection -->
   <ion-item>
     <ion-list>
-      <ion-list-header>Entities</ion-list-header>
+      <ion-list-header>Entities (WIP)</ion-list-header>
         <ion-item>
           <ion-label>Injury</ion-label>
           <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
@@ -38,10 +43,9 @@
           <ion-label>Benefits</ion-label>
         </ion-item>
       </ion-list>
-
   </ion-item>
 
-
+    <!-- Buttons -->
     <ion-button (click)="onSubmit()" expand="full" >
       Submit
     </ion-button>
@@ -49,15 +53,8 @@
     <ion-button type = "reset" expand="full" color="danger" >
       Clear
     </ion-button>
-
-
-    
   </form>
-
 </ion-content>
 </ion-app>
 
-<script>
- 
-</script>
 </html>

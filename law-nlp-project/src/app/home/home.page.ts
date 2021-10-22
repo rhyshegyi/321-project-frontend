@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class HomePage {
 
   text: string;
-  constructor(private api: ApiService, private router: Router) {}
+  constructor(private api: ApiService, private router: Router) {} // API to send data to server, router to send text to new page
 
   onSubmit(){
     //route text to results page
