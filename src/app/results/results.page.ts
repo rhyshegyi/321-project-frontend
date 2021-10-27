@@ -1,7 +1,6 @@
 import { ApiService } from './../services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params} from '@angular/router';
-import { NoSanitizePipe } from './../no-sanitize.pipe';
+import { ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -24,13 +23,10 @@ export class ResultsPage implements OnInit {
     this.route.params.subscribe((params: Params) => this.rawText = params['data']);
 
     //send rawtext to api
-    const result = await this.api.sendText(this.rawText).toPromise();
-
-    //get processed text
-    this.result = result;
+    this.result = await this.api.sendText(this.rawText).toPromise();
 
     //display processed text on results page
-    document.getElementById("results").innerHTML = result;
+    document.getElementById("results").innerHTML = this.result;
     
   }
 

@@ -1,7 +1,5 @@
-import { ApiService } from './../services/api.service';
-import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class HomePage {
 
   text: string;
-  constructor(private api: ApiService, private router: Router) {} // API to send data to server, router to send text to new page
+  constructor(private router: Router) {} // API to send data to server, router to send text to new page
 
   onSubmit(){
     //route text to results page
