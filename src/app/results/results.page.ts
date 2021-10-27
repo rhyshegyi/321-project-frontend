@@ -1,7 +1,7 @@
 import { ApiService } from './../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params} from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
+import { NoSanitizePipe } from './../no-sanitize.pipe';
 
 @Component({
   selector: 'app-results',
@@ -14,8 +14,8 @@ export class ResultsPage implements OnInit {
  rawText: string ;
  result: string;
 
-  constructor(private route: ActivatedRoute, private api: ApiService, private sanitizer: DomSanitizer) {
-    //this.trustedUrl = sanitizer.bypassSecurityTrustUrl(this.dangerousUrl);
+  constructor(private route: ActivatedRoute, private api: ApiService) {
+  
    }
 
   async ngOnInit() {

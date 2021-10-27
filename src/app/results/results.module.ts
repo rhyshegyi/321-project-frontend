@@ -1,3 +1,4 @@
+import { NoSanitizePipe } from './../no-sanitize.pipe';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,6 @@ import { ResultsPage } from './results.page';
     IonicModule,
     ResultsPageRoutingModule
   ],
-  declarations: [ResultsPage]
+  declarations: [ResultsPage, NoSanitizePipe]
 })
 export class ResultsPageModule {}
